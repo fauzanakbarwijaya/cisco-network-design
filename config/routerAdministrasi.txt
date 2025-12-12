@@ -1,0 +1,41 @@
+enable
+configure terminal
+
+! --- Konfigurasi Interface ke Switch 1 (Network 1.0) ---
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool Kepsek
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Konfigurasi Interface ke Switch 2 (Network 2.0) ---
+interface FastEthernet1/0
+ ip address 192.168.2.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool TU
+ network 192.168.2.0 255.255.255.0
+ default-router 192.168.2.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Konfigurasi Interface ke Switch 3 (Network 3.0) ---
+interface FastEthernet6/0
+ ip address 192.168.3.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool Guru
+ network 192.168.3.0 255.255.255.0
+ default-router 192.168.3.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Simpan Konfigurasi ---
+do write
