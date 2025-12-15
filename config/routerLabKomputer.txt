@@ -1,0 +1,41 @@
+enable
+configure terminal
+
+! --- Konfigurasi Interface ke Switch 1 (Network 1.0) ---
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool LK-A
+ network 192.168.4.0 255.255.255.0
+ default-router 192.168.4.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Konfigurasi Interface ke Switch 2 (Network 2.0) ---
+interface FastEthernet1/0
+ ip address 192.168.4.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool LK-B
+ network 192.168.5.0 255.255.255.0
+ default-router 192.168.5.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Konfigurasi Interface ke Switch 3 (Network 3.0) ---
+interface FastEthernet6/0
+ ip address 192.168.5.1 255.255.255.0
+ no shutdown
+ exit
+
+ip dhcp pool LK-C
+ network 192.168.6.0 255.255.255.0
+ default-router 192.168.6.1
+ dns-server 8.8.8.8
+ exit
+
+! --- Simpan Konfigurasi ---
+do write
