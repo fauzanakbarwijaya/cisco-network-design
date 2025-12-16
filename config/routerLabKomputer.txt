@@ -3,7 +3,7 @@ configure terminal
 
 ! --- Konfigurasi Interface ke Switch 1 (Network 1.0) ---
 interface FastEthernet0/0
- ip address 192.168.1.1 255.255.255.0
+ ip address 192.168.4.1 255.255.255.0
  no shutdown
  exit
 
@@ -15,7 +15,7 @@ ip dhcp pool LK-A
 
 ! --- Konfigurasi Interface ke Switch 2 (Network 2.0) ---
 interface FastEthernet1/0
- ip address 192.168.4.1 255.255.255.0
+ ip address 192.168.5.1 255.255.255.0
  no shutdown
  exit
 
@@ -27,7 +27,7 @@ ip dhcp pool LK-B
 
 ! --- Konfigurasi Interface ke Switch 3 (Network 3.0) ---
 interface FastEthernet6/0
- ip address 192.168.5.1 255.255.255.0
+ ip address 192.168.6.1 255.255.255.0
  no shutdown
  exit
 
@@ -39,3 +39,4 @@ ip dhcp pool LK-C
 
 ! --- Simpan Konfigurasi ---
 do write
+
